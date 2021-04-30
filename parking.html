@@ -7,9 +7,79 @@
     <link rel="stylesheet" href="styles.css">
     <title>One-Way</title>  
 </head>
-<body>
-  
-   
+<body class="wrap">
+
+    <script src="index.js"></script>
+    <div class="headerBar">
+        <img src="img/logo.png" alt="">
+    </div>
+    <div class="blur">
+        <br> <br> 
+        
+        <br> <br>
+        <div id="search-form">
+            <div id="header">
+            <h1>BOOK YOUR PARKING TODAY!</h1>
+            </div>
+            <section>
+            <div class="flight" id="flightbox">
+                <form id="flight-form">
+
+                <!-- FROM/TO -->
+                <div id="flight-depart">
+                    <div class="info-box">
+                        <label for="">Lot #</label>
+                            <select>
+                                <option value="0">Select Lot:</option>
+                                <option value="nyc">Lot 1</option>
+                                <option value="mia">Lot 2</option>
+                                <option value="hawaii">Lot 3</option>
+                                <option value="dubai">Dubai</option>
+                                <option value="spain">Spain</option>
+                                <option value="italy">Italy</option>
+                            </select>
+
+                    </div>
+                    <div class="info-box" id="arrive-box">
+                        <label for="">Hours</label>
+                            <select>
+                                <option value="0">Select Hours:</option>
+                                <option value="nyc">1</option>
+                                <option value="mia">2</option>
+                                <option value="hawaii">3</option>
+                                <option value="dubai">4</option>
+                                <option value="spain">5</option>
+                                <option value="italy">6</option>
+                            </select>
+                    </div>
+                </div>
+                
+                <!-- FROM/TO -->
+                <div id="flight-dates">
+                <div class="info-box">
+                    <label for="">LEAVING ON</label>
+                    <input class="calendar" type="date" >
+                </div>
+                
+                </div>
+
+                <!-- SEARCH BUTTON -->
+            
+            <a href="./flightResults.html">
+                <div id="flight-search" >
+                    <div class="info-box" ></div>
+                        <input type="submit" id="search-flight" value="FIND YOUR SPOT" onclick="location.replace('./flightResults.html'); "/>
+                    </div>
+                </div>
+            </a>
+                
+            </form> 
+            </div>
+            </section>
+        </div>
+
+     
+           
     
 </body>
 </html>

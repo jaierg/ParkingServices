@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700");
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: poppins, sans-serif; */
+  font-family: "Roboto Mono", monospace;
+  /* font-family: 'Rubik', sans-serif; */
+}
+/* #################################    Flight Page    ################################# */
+.wrap {
+  background: url("img/map.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(4px);
+  height: 100vh;
+}
+/* //////////////////// Nav Bar /////////////////// */
+.headerBar {
+  height: 105px;
+  width: 100%;
+  /* background: #fbb034; */
+  background-image: linear-gradient(to bottom, #fbb034 0%, #ffdd00 100%);
+  box-shadow: 2px 4px 8px rgb(40, 39, 39);
+}
+.headerBar img {
+  width: 305px;
+  margin-left: 200px;
+  transition: 0.5s;
+  animation: slideLeft 0.5s ease-in-out;
+}
+.headerBar img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+/* //////////////////////// Form Body  ////////////////////////// */
+
+#search-form {
+  margin-top: 85px;
+  width: 700px;
+  position: relative;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 6px 7px 4px rgb(40, 39, 39);
+  animation: slideLeft 0.8s ease-in-out;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-1500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* #################################    Flight Results Page    ################################# */
+
+/* /////////// Top section info bar ////////*/
+.prevInfo {
+  width: 100%;
+  height: 70px;
+  box-shadow: 2px 4px 8px rgb(40, 39, 39);
+  padding-top: 25px;
+  /* border: 2px solid black; */
+}
+.enteredDepart {
+  width: 200px;
+  height: 50px;
+  /* line-height: 50px; */
+  border: 2px solid black;
+  border-radius: 25px;
+  display: block;
+  margin-left: 145px;
+  transition: 0.6s;
+  float: left;
+}
+.enteredDepart img {
+  float: left;
+  width: 24%;
+  margin-top: 10px;
+}
+.enteredDate {
+  width: 200px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 25px;
+  display: block;
+  margin-left: 145px;
+  transition: 0.6s;
+  float: left;
+}
+.enteredDate img {
+  float: left;
+  width: 24%;
+  /* margin-top: 10px; */
+}
+
+.flyingFrom {
+  /* width: 100%; */
+  width: 100%;
+  height: 18px;
+  font-weight: medium;
+  font-size: 11px;
+  color: rgb(128, 126, 126);
+}
+
+.enteredDepart p,
+.enteredDate p {
+  float: left;
+  /* padding-left: 10px; */
+  font-weight: bold;
+  font-size: 19px;
+}
+.enteredDepart:hover,
+.enteredDate:hover {
+  transform: scale(1.1);
+  background-color: #034897;
+  color: white;
+}
+/* ////////////////// MAIN Body /////////////////////*/
+.wrap2 {
+  /* box-sizing: border-box; */
+
+  font-size: 1.65rem;
+  color: #034897;
+  background-color: HSL(45, 29%, 97%);
+  background-color: #dce1e6;
+  height: 100vh;
+  /* text-rendering: optimizeLegibility; */
+}
+
+/* ///////////// tabs //////*/
+
+.wrapper {
+  /* max-width: 50rem; */
+  width: 60%;
+  margin: 0 auto;
+}
+.tabs {
+  position: relative;
+  margin: 2.5rem 0;
+  background: none;
+  height: 14.75rem;
+  /* margin-bottom: 105px; */
+}
+
+.tab {
+  float: left;
+  /* margin: 0 auto; */
+  /* margin-left: 50px; */
+}
+.tab-switch {
+  display: none;
+}
+.tab-label {
+  position: relative;
+  display: block;
+  line-height: 2.75em;
+  height: 3em;
+  padding: 0 1.618em;
+  background: linear-gradient(to bottom, #4d4d4c 0%, #0e0e0e 34%, #4d4d4c 100%);
+  /* border-right: 0.125rem solid #353534; */
+  color: #fff;
+  cursor: pointer;
+  top: 0;
+  transition: all 0.25s;
+}
+.tab-label:hover {
+  top: -0.95rem;
+  transition: top 0.35s;
+}
+.tab-content {
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  top: 2.75em;
+  left: 0;
+  /* padding: 1.618rem; */
+  background: #fff;
+  /* color: #2c3e50; */
+  border-bottom: 0.25rem solid #bdc3c7;
+  /* width: 1000px; */
+  opacity: 0;
+  /* margin-bottom: 1000px; */
+  transition: all 0.35s;
+  box-shadow: 3px 7px 9px rgb(40, 39, 39);
+}
+
+.tab-switch:checked + .tab-label {
+  background: #fff;
+  color: black;
+  border-bottom: 0;
+  border-right: 0.125rem solid #fff;
+  transition: all 0.35s;
+  z-index: 1;
+  top: -0.0625rem;
+}
+.tab-switch:checked .flightCard{
+  animation: slideLeft 1s;
+}
+.tab-switch:checked + label + .tab-content {
+  z-index: 2;
+  opacity: 1;
+  transition: all .35s;
+}
+.tab2{
+  transition: .8s;
+}
+.tab2:hover{
+  background: linear-gradient(to bottom, #6c1307 0%, #d71717 34%, #6c1307 100%);
+  color: black;
+  font-weight: bolder;
+  transition: .2s ease-in-out;
+}
+/* //////////////////////inside tab content/////////// */
+
+.container {
+  margin: 0 auto;
+  width: 40%;
+  padding: 0 4rem;
+  height: auto;
+}
+
+.price {
+  font-size: 4rem;
+  font-weight: bolder;
+  color: black;
+}
+.price sup {
+  vertical-align: top;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+.price sub {
+  vertical-align: bottom;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+/* /////////////////////////// DASHED Route line //////////////////// */
+.route-line {
+  position: relative;
+  margin: 1rem 0 0;
+  width: 100%;
+  height: 1px;
+  border: 0.1rem dashed #000000;
+}
+.route-line__stop {
+  border-radius: 100%;
+  box-sizing: content-box;
+  width: 0.8rem;
+  height: 0.8rem;
+  position: absolute;
+  top: 50%;
+  background-color: #ffdd00;
+  transform: translate3d(-50%, -50%, 0);
+}
+.route-line__stop-name {
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  transform: translateX(-0.7rem);
+}
+.route-line__start {
+  left: 0;
+  border: 0.6rem solid #ffdd00;
+  background-color: #fff;
+}
+.route-line__end {
+  right: 0;
+  border: 0.6rem solid HSL(240, 52%, 94%);
+  transform: translate3d(50%, -50%, 0);
+}
+
+/* ////////////////////// Flight Card /////////////////////// */
+.flightList {
+  border: 11px solid black;
+  /* width: 100%; */
+}
+.flightCard {
+  border-radius: 1.5rem;
+  width: 1000px;
+  box-shadow: 0 0 0.1rem HSLA(239, 39%, 45%, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  color: black;
+  background-color: #fff;
+  box-shadow: 3px 7px 9px rgb(40, 39, 39);
+  transform: scale(0.65);
+  /* animation: slideLeft 1.3s ease-in-out; */
+  transition: 1.5s, transform 0.4s ease-in-out;
+}
+.flightCard:hover {
+  border: 1.5px solid black;
+  box-shadow: 10px 17px 22px rgb(16, 16, 16);
+  transform: scale(0.74);
+  cursor: pointer;
+}
+
+.flightCard__departure {
+  margin-left: 2rem;
+}
+.flightCard__arrival {
+  margin-right: 3rem;
+  text-align: right;
+}
+.flightCard__route {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4rem;
+}
+.flightCard__duration {
+  font-size: 1.4rem;
+}
+
+.flightCard__action {
+  text-align: center;
+}
+.flightCard__time {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  font-size: 46px;
+  font-weight: BOLDER;
+}
+
+.button {
+  border-radius: 0.8rem;
+  margin-top: 21px;
+  padding: 0.75em 2em;
+  appearance: none;
+  background: linear-gradient(to bottom, #fbb034 0%, #ffdd00 38%, #fbb034 100%);
+  color: black;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  transition: .5s,  background-color 1s cubic-bezier(0.25, 1, 0.5, 1), color 1.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.button:hover {
+  background: linear-gradient(to bottom, #4d4d4c 0%, #0e0e0e 34%, #4d4d4c 100%);
+  color: white;
+  transform: scale(1.015);
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(-1500px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/* ///////// VIP  SECTION ///////////////*/
+.flightCard2{
+  border: 2px solid #d71717;
+  transition: .75s;
+}
+.flightCard2:hover{
+  border: 6px solid #d71717;
+  background: linear-gradient(to bottom, #2f2f2e 0%, #0e0e0e 28%, #2f2f2e 100%);
+  color: white;
+}
+.flightCard2:hover .route-line {
+  border: 2px dashed white;
+}
+.flightCard2:hover .price {
+  color: white;
+}
+.button2{
+  background: linear-gradient(to bottom, #6c1307 0%, #d71717 34%, #6c1307 100%);
+  color: white;
+  font-weight: bolder;
+}
+.button2:hover{
+  background: linear-gradient(to bottom, #908e8e 0%, #ffffff 30%, #ffffff 60%, #908e8e 100%);
+  color: black;
+}
+
+.results{
+  color: black;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 35px;
+  margin-top: 15px;
+  text-decoration: underline;
+ 
+  animation: slideLeft 1.2s;
+}
+.result2{
+  color: #d71717;
+  animation: slideLeft 2s;
+}
+/* ################################# PAYMENT SCREEENNN ####################### */
