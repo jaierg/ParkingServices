@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>One-Way</title>  
+    <title>One-Day</title>  
 </head>
 <body class="wrap">
 
     <script src="index.js"></script>
     <div class="headerBar">
         <img src="img/logo.png" alt="">
+        <a href="./Profile.html">
+            <img src="img/user.png" class="user" alt="">
+          </a>
     </div>
     <div class="blur">
         <br> <br> 
@@ -23,7 +26,7 @@
             </div>
             <section>
             <div class="flight" id="flightbox">
-                <form id="flight-form">
+                <form id="flight-form" action="./parkingResults.html">
 
                 <!-- FROM/TO -->
                 <div id="flight-depart">
@@ -31,12 +34,10 @@
                         <label for="">Lot #</label>
                             <select>
                                 <option value="0">Select Lot:</option>
-                                <option value="nyc">Lot 1</option>
-                                <option value="mia">Lot 2</option>
-                                <option value="hawaii">Lot 3</option>
-                                <option value="dubai">Dubai</option>
-                                <option value="spain">Spain</option>
-                                <option value="italy">Italy</option>
+                                <option value="1">Lot 1</option>
+                                <option value="2">Lot 2</option>
+                                <option value="3">Lot 3</option>
+                              
                             </select>
 
                     </div>
@@ -44,12 +45,12 @@
                         <label for="">Hours</label>
                             <select>
                                 <option value="0">Select Hours:</option>
-                                <option value="nyc">1</option>
-                                <option value="mia">2</option>
-                                <option value="hawaii">3</option>
-                                <option value="dubai">4</option>
-                                <option value="spain">5</option>
-                                <option value="italy">6</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                <option value="24">24</option>
                             </select>
                     </div>
                 </div>
@@ -63,8 +64,6 @@
                 
                 </div>
 
-                <!-- SEARCH BUTTON -->
-            
             <a href="./flightResults.html">
                 <div id="flight-search" >
                     <div class="info-box" ></div>
