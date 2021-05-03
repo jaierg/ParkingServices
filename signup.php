@@ -62,9 +62,6 @@
             <div class="field">
                 <input placeholder="Password" type="text" name="password" >
             </div>
-            <div class="field">
-                <input placeholder="license" type="text" name="license" >
-            </div>
 
             <div class="field">
                 <input type="submit" name="submit" >

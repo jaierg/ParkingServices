@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "spot";
+$dbname = "spotdb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
