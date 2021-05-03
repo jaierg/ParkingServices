@@ -1,3 +1,13 @@
+<?php 
+session_start();
+include 'debug.php';
+$split = explode("=",$_SERVER['REQUEST_URI'])[1];
+if (explode("=",$_SERVER['REQUEST_URI'])[1] != null){
+    $_SESSION["class"] = explode("=",$_SERVER['REQUEST_URI'])[1];
+}
+console_log($_SESSION);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +32,9 @@
           <p>Review & Pay</p> 
       </div>  
       <div class="flightDepart">
-        <p class="depart">Depart</p>
-        <p class="destination">DECK 2</p>
-        <p class="date"> 12PM TO 6PM</p>
+        <p class="depart">PARK</p>
+        <p class="destination">LOT <?= $_SESSION["lot"]?> </p>
+        <p class="date"> <?php echo date("g:i a", strtotime($_SESSION["start_time"]))?> To <?php echo date("g:i a", strtotime($_SESSION["end_time"]))?> </p>
       </div>
 
       <div class="contain">
@@ -115,9 +125,9 @@
     
                     
                     <!-- <a href="./Reciept.html"> -->
-                        <button id="PayButton" type="submit"  onclick="location.replace('./Reciept.html');">
+                        <button id="PayButton" type="submit"  onclick="location.replace('./Reciept.php');">
                             <span class="submit-button-lock"></span>
-                            <span class="align-middle" onclick="location.replace('./Reciept.html');" >Pay $500.00</span>
+                            <span class="align-middle" onclick="location.replace('./Reciept.php');" >Pay $500.00</span>
                         </button>
                     <!-- </a> -->
                     

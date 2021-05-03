@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
 <?php
+session_start();
 include "debug.php";
 $localhost = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "spotdb";
 $con = new mysqli($localhost, $username, $password, $dbname);
 if( $con->connect_error){
@@ -57,11 +58,11 @@ $result = $con->query($sql);
             <article class="flightCard">
               <div class="flightCard__departure">
                 <!-- DEPATURE TIME -->
-                <time class="flightCard__time"><?php echo $row['START_TIME']; ?></time>
+                <time class="flightCard__time"><?php $_SESSION['start_time'] = $row['START_TIME']; echo $row['START_TIME']; ?></time>
                 <!-- DEPART LOCATION -->
-                <h2 class="flightCard__city">LOT <?php echo $row['LOT_ID']; ?></h2>
+                <h2 class="flightCard__city">LOT <?php $_SESSION['start_time'] = $row['START_TIME'];  $_SESSION['class'] = $row['CLASS'];  $_SESSION['lot'] = $row['LOT_ID'];echo $row['LOT_ID']; ?></h2>
                 <!-- DEPART DATE -->
-                <time class="flightCard__day"><?php echo $row['R_DATE']; ?></time>
+                <time class="flightCard__day"><?php $_SESSION['date'] = ($row['R_DATE']*2); echo $row['R_DATE']; ?></time>
               </div>
               <div class="flightCard__route">
                 <!-- FLIGHT DURATION -->
@@ -72,18 +73,18 @@ $result = $con->query($sql);
                 </div>
               </div>
               <div class="flightCard__arrival">
-                <time class="flightCard__time"><?php echo $row['END_TIME']; ?></time>
+                <time class="flightCard__time"><?php $_SESSION['end_time'] = $row['END_TIME']; echo $row['END_TIME']; ?></time>
                 <h2 class="flightCard__city"></h2>
                 <time class="flightCard__day"><?php echo $row['R_DATE']; ?></time>
               </div>
               <div class="flightCard__action">
                 <p class="flightCard__price price">
-                  <sup>$</sup><?php echo ($row['STD_PRICE']*2); ?><sub>USD</sub>
+                  <sup>$</sup><?php $_SESSION['price'] = ($row['STD_PRICE']*2); echo ($row['STD_PRICE']*2); ?><sub>USD</sub>
                 </p>
 
                 <button
                   class="button"
-                  onclick="location.replace('./Payment.html');"
+                  onclick="location.replace('./Payment.php?class=reg');"
                 >
                   BOOK
                 </button>
@@ -122,12 +123,12 @@ $result = $con->query($sql);
                 </div>
                 <div class="flightCard__action">
                   <p class="flightCard__price price">
-                    <sup>$</sup><?php echo ($row['VIP_PRICE']*2); ?><sub>USD</sub>
+                    <sup>$</sup><?php $_SESSION['vip_price'] = ($row['VIP_PRICE']*2);echo ($row['VIP_PRICE']*2); ?><sub>USD</sub>
                   </p>
   
                   <button
                     class="button button2"
-                    onclick="location.replace('./Payment.html');"
+                    onclick="location.replace('./Payment.php?class=vip');"
                   >
                     BOOK
                   </button>

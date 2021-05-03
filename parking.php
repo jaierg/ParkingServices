@@ -30,24 +30,11 @@
                 <div id="flight-depart">
                     <div class="info-box">
                         <label for="">LOT #</label>
-                            <select>
+                            <select name="lot">
                                 <option value="0">Select Lot:</option>
                                 <option value="1">Lot 1</option>
                                 <option value="2">Lot 2</option>
                                 <option value="3">Lot 3</option>
-                            </select>
-
-                    </div>
-                    <div class="info-box" id="arrive-box">
-                        <label for="">HOURS</label>
-                            <select>
-                                <option value="0">Select Hours:</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="6">6</option>
-                                <option value="12">12</option>
-                                <option value="24">24</option>
                             </select>
                     </div>
                 </div>
@@ -55,7 +42,7 @@
                 <div id="flight-dates">
                     <div class="info-box">
                         <label for="">LEAVING ON</label>
-                        <input class="calendar" type="date" >
+                        <input class="calendar" type="date" name="date" >
                     </div>
                     <div class="info-box start" >
                         <label for="">START TIME</label>
