@@ -83,4 +83,3 @@ INSERT INTO reservation VALUES("60","9","16:00:00","18:00:00","std","40");
 INSERT INTO reservation VALUES("61","9","08:00:00","10:00:00","std","14");
 INSERT INTO reservation VALUES("62","9","12:00:00","14:00:00","std","15");
 INSERT INTO reservation VALUES("63","9","18:00:00","20:00:00","std","51");
-
