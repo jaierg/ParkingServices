@@ -28,10 +28,9 @@
             <div class="flight" id="flightbox">
                 <form id="flight-form" action="./parkingResults.html">
 
-                <!-- FROM/TO -->
                 <div id="flight-depart">
                     <div class="info-box">
-                        <label for="">Lot #</label>
+                        <label for="">LOT #</label>
                             <select>
                                 <option value="0">Select Lot:</option>
                                 <option value="1">Lot 1</option>
@@ -42,7 +41,7 @@
 
                     </div>
                     <div class="info-box" id="arrive-box">
-                        <label for="">Hours</label>
+                        <label for="">HOURS</label>
                             <select>
                                 <option value="0">Select Hours:</option>
                                 <option value="1">1</option>
@@ -55,12 +54,40 @@
                     </div>
                 </div>
                 
-                <!-- FROM/TO -->
                 <div id="flight-dates">
-                <div class="info-box">
-                    <label for="">LEAVING ON</label>
-                    <input class="calendar" type="date" >
-                </div>
+                    <div class="info-box">
+                        <label for="">LEAVING ON</label>
+                        <input class="calendar" type="date" >
+                    </div>
+                    <div class="info-box start" >
+                        <label for="">START TIME</label>
+                            <select>
+                                <option value="0">Select Time:</option>
+                                <option value="1">1:00 AM</option>
+                                <option value="2">2:00 AM</option>
+                                <option value="3">3:00 AM</option>
+                                <option value="4">4:00 AM</option>
+                                <option value="5">5:00 AM</option>
+                                <option value="6">6:00 AM</option>
+                                <option value="7">7:00 AM</option>
+                                <option value="8">8:00 AM</option>
+                                <option value="9">9:00 AM</option>
+                                <option value="10">10:00 AM</option>
+                                <option value="11">11:00 AM</option>
+                                <option value="12">12:00 PM</option>
+                                <option value="1PM">1:00 PM</option>
+                                <option value="2PM">2:00 PM</option>
+                                <option value="3PM">3:00 PM</option>
+                                <option value="4PM">4:00 PM</option>
+                                <option value="5PM">5:00 PM</option>
+                                <option value="6PM">6:00 PM</option>
+                                <option value="7PM">7:00 PM</option>
+                                <option value="8PM">8:00 PM</option>
+                                <option value="9PM">9:00 PM</option>
+                                <option value="10PM">10:00 PM</option>
+                                <option value="11PM">11:00 PM</option>
+                            </select>
+                    </div>
                 
                 </div>
 
