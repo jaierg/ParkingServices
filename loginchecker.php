@@ -14,7 +14,7 @@ $conn = new mysqli($servername, $username, $password,$dbname);
     
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $query = "SELECT * from CUSTOMERS where EMAIL='$email' and PWD='$password'";
+        $query = "SELECT * from CUSTOMER where EMAIL='$email' and PWD='$password'";
         $result = mysqli_query($conn,$query);
         if(mysqli_num_rows($result)==1){
             session_start();
