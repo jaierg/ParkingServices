@@ -18,7 +18,7 @@
     </div>
     <div class="blur">
         <br> <br> 
-        
+         
         <br> <br>
         <div id="search-form">
             <div id="header">
