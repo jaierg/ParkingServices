@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "OneWay";
+$dbname = "spotdb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
@@ -11,9 +11,9 @@ $conn = new mysqli($servername, $username, $password,$dbname);
         $lname = $_POST['lastname'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-
-        $query = "insert into CUSTOMERS (FNAME,LNAME,EMAIL,PWD) values ('$fname','$lname','$email','$password')";
-        $run = mysqli_query($conn,$query) or die (mysqli_error());
+        $license = $_POST['license'];
+        $query = "insert into CUSTOMER (FNAME,LNAME,EMAIL,PWD,LICENSE_NUM) values ('$fname','$lname','$email','$password','$license)";
+        $run = mysqli_query($conn,$query) or die (mysqli_error($conn));
         if($run){
          header("Location:login.php?signup=success");    
         }    

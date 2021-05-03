@@ -26,7 +26,7 @@ session_start();
 
         <p>
             <?php         
- $con = mysqli_connect("localhost", "root", "root", "OneWay");
+ $con = mysqli_connect("localhost", "root", "root", "spotdb");
    //Retrieving the contents of the table
    $res = mysqli_query($con, "SELECT FNAME, LNAME FROM CUSTOMERS where EMAIL='{$_SESSION['user']}'");
 

@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "OneWay";
+$dbname = "spot";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
