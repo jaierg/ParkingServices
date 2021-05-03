@@ -841,10 +841,6 @@ background-color: #EEF9F9;
     box-shadow: 0 3px 10px rgba(0,0,0,.4);
     margin-top: 35px;
     margin-left: 50px;
-    /* margin: auto; */
-    /* position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0; */
-    /* overflow: hidden; */
     transition: .5s ease-in-out;
     animation: slideUp 1.4s ease-in;
   }
@@ -1005,7 +1001,7 @@ background-color: #EEF9F9;
   opacity: 1;
 }
 .accountInfo{
-  width: 65%;
+  width: 55%;
   border: 1px solid black;
   margin: 0 auto;
   margin-top: 50px;
@@ -1045,11 +1041,8 @@ background-color: #EEF9F9;
   font-weight: bold;
 }
 .item .prevFlight{
-  /* float: left; */
   font-weight: bold;
   opacity: .6;
-  /* margin-top: 18px; */
-  /* text-align: center; */
 }
 
 span .city{
@@ -1060,16 +1053,14 @@ span .city{
 }
 .itemImg{
   width: 10%;
+  margin-top: 20px;
   float: left;
+  animation: slideLeft 1.3s ease-in-out;
 }
 .previous{
-  width: 80%;
+  width: 79%;
   height: 100%;
   float: left;
-  /* border: 4px solid black; */
-  /* text-align: center; */
-  /* display: flex;
-  justify-content: center; */
 }
 .previous p{
   text-align: center;
@@ -1082,20 +1073,21 @@ span .city{
   /* padding-top: 150px; */
 }
 .previous img{
-  width: 55px;
+  width: 60px;
   float: left;
-  padding-left: 50px;
-  padding-RIGHT: 50px;
+  padding-left: 20px;
+  padding-RIGHT: 20px;
   opacity: .85;
 }
 .depArr{
-  width: 75%;
+  width: 50%;
   margin: 0 auto;
 }
 .paidAmount{
   width: 8%;
   /* border: 2px solid black; */
   padding-top: 2px;
+  padding-right: 15px;
   float: left;
   height: 100%;
 }
