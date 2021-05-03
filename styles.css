@@ -882,12 +882,17 @@ background-color: #EEF9F9;
   
   .from {
     width: 50%;
+    /* float: left; */
   }
   
   .to {
+    /* float: left; */
     width: 50%;
   }
-  
+  .to img{
+    float: left;
+    width: 50px;
+  }
   #bp .airports i {
     position: relative;
     top: 35px;
@@ -1055,14 +1060,14 @@ span .city{
   padding-top: 25px;
 }
 .itemImg{
-  width: 10%;
+  width: 15%;
   margin-top: 20px;
-  padding-left: 5px;
+  padding-left: 25px;
   float: left;
   animation: slideLeft 1.3s ease-in-out;
 }
 .previous{
-  width: 79%;
+  width: 70%;
   height: 100%;
   float: left;
 }
@@ -1084,7 +1089,7 @@ span .city{
   opacity: .85;
 }
 .depArr{
-  width: 50%;
+  width: 55%;
   margin: 0 auto;
 }
 .paidAmount{
