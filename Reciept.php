@@ -1,6 +1,5 @@
 <?php 
 session_start();
-include "getCity.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,40 +15,40 @@ if( $con->connect_error){
     die('Error: ' . $con->connect_error);
 }
 
-if( isset($_POST['submit1'] )){
-  $num = $_SESSION["class"];
-  $classtype = $_SESSION["class"];
-  //echo $classtype;
-  if ($classtype == "business"){
-    $availVar = "STD_AVAILABILITY";
-  }
- else if ($classtype == "fc"){
-    $availVar = "VIP_AVAILABILITY";
- }
+// if( isset($_POST['submit1'] )){
+//   $num = $_SESSION["class"];
+//   $classtype = $_SESSION["class"];
+//   //echo $classtype;
+//   if ($classtype == "business"){
+//     $availVar = "STD_AVAILABILITY";
+//   }
+//  else if ($classtype == "fc"){
+//     $availVar = "VIP_AVAILABILITY";
+//  }
 
  
   $currentTime = date("Y-m-d H:i:s",time());
 
-  $update = "UPDATE seats
-                  set $availVar = $availVar-1
-                  WHERE SEAT_ID = $num;";
+//   $update = "UPDATE seats
+//                   set $availVar = $availVar-1
+//                   WHERE SEAT_ID = $num;";
 
-  $insert = "INSERT INTO orders (EMAIL, FLIGHT_ID,PRICE,ORDER_DATE) VALUES('{$_SESSION['user']}','{$_SESSION['flight_id']}','{$_SESSION['price']}','{$currentTime}')";
-  console_log($insert);
+//   $insert = "INSERT INTO orders (EMAIL, FLIGHT_ID,PRICE,ORDER_DATE) VALUES('{$_SESSION['user']}','{$_SESSION['flight_id']}','{$_SESSION['price']}','{$currentTime}')";
+//   console_log($insert);
   
-  echo $update;
-  if(mysqli_query($con, $update)){
-     // echo "Records added successfully.";
-  } else{
-      echo "ERROR: Could not able to execute $update. " . mysqli_error($con);
-  }
+//   echo $update;
+//   if(mysqli_query($con, $update)){
+//      // echo "Records added successfully.";
+//   } else{
+//       echo "ERROR: Could not able to execute $update. " . mysqli_error($con);
+//   }
 
-  if(mysqli_query($con, $insert)){
-    // echo "Records added successfully.";
- } else{
-     echo "ERROR: Could not able to execute $insert. " . mysqli_error($con);
- }
-}
+//   if(mysqli_query($con, $insert)){
+//     // echo "Records added successfully.";
+//  } else{
+//      echo "ERROR: Could not able to execute $insert. " . mysqli_error($con);
+//  }
+
 
 ?>
 <html lang="en">

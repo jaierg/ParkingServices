@@ -79,7 +79,7 @@ console_log($_SESSION);
                     <span  class = "card" id="amex"></span>
                     <span  class = "card" id="discover"></span>
                 </div>
-                <form>
+                <form action="./Reciept.php">
                     <div class="formGroup">
                         <label >Payment amount</label>
                         <div class="amount-placeholder">

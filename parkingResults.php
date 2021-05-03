@@ -17,7 +17,7 @@ if( isset($_POST['lot']) && isset($_POST['time']) && isset($_POST['date']) ){
     $lot = mysqli_real_escape_string($con, htmlspecialchars($_POST['lot']));
 	$time = mysqli_real_escape_string($con, htmlspecialchars($_POST['time']));
 	$date = mysqli_real_escape_string($con, htmlspecialchars($_POST['date']));
-    $sql = "SELECT * FROM spot, reservation where R_DATE LIKE '$date%' and START_TIME = '$time' and LOT_ID = '$lot' and spot.SPOT_ID = reservation.SPOT_ID ";
+    $sql = "SELECT * FROM spot, reservation where R_DATE LIKE '$date%' and START_TIME = '$time' and LOT_ID = '$lot' and spot.SPOT_ID = reservation.SPOT_ID LIMIT 1 ";
 	console_log($sql);
 }
 $result = $con->query($sql);
