@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
 session_start();
-var_dump($_SESSION);
 include "debug.php";
 $localhost = "localhost";
 $username = "root";
@@ -11,6 +10,23 @@ $con = new mysqli($localhost, $username, $password, $dbname);
 if( $con->connect_error){
     die('Error: ' . $con->connect_error);
 }
+
+console_log($_SESSION);
+
+$loc = "SELECT PARK_LOC,S.SPOT_ID,R.RESERVATION_ID FROM RESERVATION AS R, SPOT AS S WHERE S.LOT_ID = '{$_SESSION["lot"]}' AND R.START_TIME = '{$_SESSION["start_time"]}' 
+        AND S.SPOT_ID = R.SPOT_ID AND S.R_DATE = '{$_SESSION["date_val"]}'";
+console_log($loc);
+$result = $con->query($loc);
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    $park_loc = $row["PARK_LOC"];
+  }
+} else {
+  echo "0 results";
+}
+
+console_log($park_loc);
 
 // if( isset($_POST['submit1'] )){
 //   $num = $_SESSION["flight_id"];
@@ -32,8 +48,14 @@ if( $con->connect_error){
 //                   set $availVar = $availVar-1
 //                   WHERE SEAT_ID = $num;";
 
-//   $insert = "INSERT INTO orders (EMAIL, FLIGHT_ID,PRICE,ORDER_DATE) VALUES('{$_SESSION['user']}','{$_SESSION['flight_id']}','{$_SESSION['price']}','{$currentTime}')";
-//   console_log($insert);
+  if ($_SESSION["class"] = "vip"){
+    $class_price = $_SESSION["vip_price"];
+  }else{
+    $class_price = $_SESSION["price"];
+  }
+
+  $insert = "INSERT INTO orders (EMAIL, RESERVATION_ID,SPOT_ID,PRICE) VALUES('{$_SESSION['user']}','{$_SESSION['']}','{$_SESSION['price']}','{$currentTime}')";
+  console_log($insert);
   
 //   echo $update;
 //   if(mysqli_query($con, $update)){
@@ -84,11 +106,11 @@ if( $con->connect_error){
                 <div class="airports">
                   <div class="from">
                     <!-- <span>BCA</span> -->
-                    <span class="date"><?php $_SESSION["start_time"]?></span>
+                    <span class="date"><?php echo date("g:i a", strtotime($_SESSION["start_time"]))?></span>
                   </div>
                   <div class="to">
                     
-                    <span class="date"><?php $_SESSION["end_time"]?></span>
+                    <span class="date"><?php echo date("g:i a", strtotime($_SESSION["end_time"]))?></span>
                   </div>       
                 </div>
 
@@ -96,21 +118,21 @@ if( $con->connect_error){
                   <div class="your-trip">
                     <span class="title">Your Parking</span>
                     <span class="from">LOT <?= $_SESSION["lot"]?></span>
-                    <span class="to">3 HOURS</span>
+                    <span class="to">2 HOURS</span>
                   </div>
                   
                   <div class="details">
                     <div>
-                      <span class="title">Gate</span>
+                      <span class="title">Lot</span>
                       <span class="gate">2</span>
                     </div>
                     <div>
                       <span class="title">SPOT</span>
-                      <span class="seat">3B</span>
+                      <span class="seat"><?= $park_loc?></span>
                     </div>
                     <div>
                       <span class="title">Start Time</span>
-                      <span class="board-at">10:30</span>
+                      <span class="board-at"><?php echo date("g:i a", strtotime($_SESSION["start_time"]))?></span>
                     </div>
                     
                   </div>
