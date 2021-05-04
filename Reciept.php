@@ -1,9 +1,6 @@
-<?php 
-session_start();
-?>
-
 <!DOCTYPE html>
 <?php
+session_start();
 var_dump($_SESSION);
 include "debug.php";
 $localhost = "localhost";
@@ -16,7 +13,7 @@ if( $con->connect_error){
 }
 
 // if( isset($_POST['submit1'] )){
-//   $num = $_SESSION["class"];
+//   $num = $_SESSION["flight_id"];
 //   $classtype = $_SESSION["class"];
 //   //echo $classtype;
 //   if ($classtype == "business"){
@@ -24,10 +21,12 @@ if( $con->connect_error){
 //   }
 //  else if ($classtype == "fc"){
 //     $availVar = "VIP_AVAILABILITY";
+//  }else{
+//     $availVar = "E_AVAILABILITY";
 //  }
 
  
-  $currentTime = date("Y-m-d H:i:s",time());
+//   $currentTime = date("Y-m-d H:i:s",time());
 
 //   $update = "UPDATE seats
 //                   set $availVar = $availVar-1
@@ -48,7 +47,7 @@ if( $con->connect_error){
 //  } else{
 //      echo "ERROR: Could not able to execute $insert. " . mysqli_error($con);
 //  }
-
+// }
 
 ?>
 <html lang="en">
@@ -56,22 +55,18 @@ if( $con->connect_error){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Receipt</title>  
 </head>
 
-
     <body class="recieptbg">
         <div class="headerBar">
-            <a href="./login.php">
-                <img src="img/logo.png" alt="">
-            </a>
-            <a href="./Profile.php">
+            <img src="img/logo.png" alt="">
+            <a href="./Profile.html">
               <img src="img/user.png" class="user" alt="">
             </a>
         </div>
         <br><br><br><br><br><br>
-
         <div class="reciept">
             <div class="thanks">
                 <p>Thank you for choosing <br> <img src="img/logo.png" alt="">
@@ -83,46 +78,39 @@ if( $con->connect_error){
       
                 <!-- Header -->
                 <div class="header">
-                  <span>Boarding Pass</span>
+                  <span>Parking Pass</span>
                 </div>
-                <!-- /Header -->
-                <!-- Airports -->
+
                 <div class="airports">
                   <div class="from">
-                    <span><?= $_SESSION["start_loc"] ?></span>
-                    <span class="date"><?php echo explode(":00",explode(" ",$_SESSION["depart_time"])[1])[0] ?></span>
+                    <!-- <span>BCA</span> -->
+                    <span class="date"><?php $_SESSION["start_time"]?></span>
                   </div>
-                  <i class="fa fa-plane"></i>
                   <div class="to">
-                    <span><?= $_SESSION["end_loc"]?></span>
-                    <span class="date"><?php echo explode(":00",explode(" ",$_SESSION["land_time"])[1])[0] ?></span>
+                    
+                    <span class="date"><?php $_SESSION["end_time"]?></span>
                   </div>       
                 </div>
-                <!-- /Airports -->
-                <!-- Info -->
+
                 <div class="info">
                   <div class="your-trip">
-                    <span class="title">Your Trip</span>
-                    <span class="from"><?php echo getCity($_SESSION["start_loc"])?></span>
-                    <span class="to"><?php echo getCity($_SESSION["end_loc"])?></span>
+                    <span class="title">Your Parking</span>
+                    <span class="from">LOT <?= $_SESSION["lot"]?></span>
+                    <span class="to">3 HOURS</span>
                   </div>
                   
                   <div class="details">
                     <div>
-                      <span class="title">Flight</span>
-                      <span style="padding: 0px !important;"><?= $_SESSION["flight_num"]?></span>
+                      <span class="title">Gate</span>
+                      <span class="gate">2</span>
                     </div>
                     <div>
-                      <span class="title"></span>
-                      <span class="gate"></span>
+                      <span class="title">SPOT</span>
+                      <span class="seat">3B</span>
                     </div>
                     <div>
-                      <span class="title"></span>
-                      <span class="seat"></span>
-                    </div>
-                    <div>
-                      <span class="title">Board at</span>
-                      <span class="board-at"><?php echo date('H:i',(strtotime(explode(":00",explode(" ",$_SESSION["depart_time"])[1])[0])-3600)) ?></span>
+                      <span class="title">Start Time</span>
+                      <span class="board-at">10:30</span>
                     </div>
                     
                   </div>
